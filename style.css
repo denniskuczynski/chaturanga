@@ -1,0 +1,21 @@
+html, body {
+	margin: 0;
+}
+
+#input_form {
+  position: fixed;
+  height: 125px;
+  background: white;
+  padding: 5px;
+  border-bottom: 1px solid #cccccc;
+  z-index: 10;
+}
+
+#input_form > input[type='text'] {
+  width: 400px;
+}
+
+#messages {
+  position: absolute;
+  top: 125;
+}

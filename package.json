@@ -1,0 +1,25 @@
+{
+  "name": "chaturanga",
+  "version": "1.0.0",
+  "description": "Websocket Chatroom Example",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denniskuczynski/chaturanga.git"
+  },
+  "keywords": [
+    "websocket",
+    "chatroom"
+  ],
+  "author": "Dennis Kuczynski <dennis.kuczynski@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/denniskuczynski/chaturanga#readme",
+  "dependencies": {
+    "amqplib": "0.3.2",
+    "node-static": "0.7.6",
+    "websocket": "1.0.21"
+  }
+}
