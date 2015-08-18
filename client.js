@@ -11,11 +11,11 @@
 
         connection.onerror = function () {
             console.log('onerror', arguments);
-            unbindFormListener();
         };
 
         connection.onclose = function () {
             console.log('onclose', arguments);
+            unbindFormListener();
             clearMessages();
             setTimeout(createConnection, 5000);
         };
@@ -34,21 +34,24 @@
     function bindFormListener() {
         var form = document.getElementById('input_form');
         form.submit.disabled = false;
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            var form = e.target;
-            connection.send(form.message.value);
-            form['message'].value = '';
-            form['message'].focus();
-        });
+        form.addEventListener('submit', onSubmitHandler);
     }
 
     function unbindFormListener() {
         var form = document.getElementById('input_form');
         form.submit.disabled = true;
-        form.removeEventListener('submit');
+        form.removeEventListener('submit', onSubmitHandler);
     }
+
+    function onSubmitHandler(e) {
+        e.preventDefault();
+
+        var form = e.target;
+        connection.send(form.message.value);
+        form['message'].value = '';
+        form['message'].focus();
+    }
+
 
     function appendMessage(message) {
         var data = message.data;
